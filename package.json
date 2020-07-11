@@ -10,6 +10,7 @@
     "heroku": "^7.42.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-google-login": "^5.1.21",
     "react-scripts": "3.4.1"
   },
   "scripts": {
@@ -33,5 +34,4 @@
       "last 1 safari version"
     ]
   }
-  
 }

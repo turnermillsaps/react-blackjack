@@ -7,7 +7,7 @@ import Card from './Card'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Card />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
