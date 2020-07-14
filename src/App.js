@@ -21,7 +21,7 @@ function App() {
               <div>
                   <nav>
                     <div className="Play-button">
-                      <Link to="/Card">
+                      <Link to="/Board">
                         Play Blackjack
                       </Link>
                     </div>

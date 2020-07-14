@@ -10,12 +10,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Board from './Components/Board';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
     <Switch>
-              <Route exact path="/card" component={Card}/>
+              <Route exact path="/Board" component={Board}/>
               <Route exact path="/" component={App}/>
           </Switch>
     </Router>
