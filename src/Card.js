@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './Card.css'; 
 
 
 class Card extends Component {
@@ -43,16 +44,21 @@ class Card extends Component {
       } else {
         return (
           <ul>
-            <div>
-                <p>Hello</p>
-                
+            <div className="App-header">
+            <div className="board">
+                <div>
+                    <h2>Player: coding test13</h2>
+                    <h2>Hit</h2>
+                    <h2>Stand</h2>
+                </div>
+            
+                {cards.map(card => (
+                        <li key={card.code}>
+                        {/*{card.value} {card.suit} */} <img src={card.image}></img>
+                        </li>
+                    ))} 
             </div>
-        
-                 {cards.map(card => (
-                     <li key={card.code}>
-                        {card.value} {card.suit} <img src={card.image}></img>
-                    </li>
-                 ))} 
+            </div>
            </ul> 
         );
       }
