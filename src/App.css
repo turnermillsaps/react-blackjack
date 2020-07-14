@@ -14,6 +14,9 @@
 }
 
 .App-header {
+  background-image: url('./Components/images/blackjack.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,8 +27,22 @@
   color: white;
 }
 
+.Body{
+  height: 500px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 400px;
+  background-color: rgba(0,0,0,0.5) !important;
+  flex-direction: column;
+  text-align: center;
+  }
+
 .App-link {
   color: #61dafb;
+}
+
+.play-button {
+  color: blue;
 }
 
 @keyframes App-logo-spin {

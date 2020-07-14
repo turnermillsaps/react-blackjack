@@ -4,10 +4,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Card from './Card'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+    <Switch>
+              <Route exact path="/card" component={Card}/>
+              <Route exact path="/" component={App}/>
+          </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
