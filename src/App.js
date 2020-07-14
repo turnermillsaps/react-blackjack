@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
+import Card from './Card'; 
+import Google from './Google';
 
 function App() {
   return (
@@ -16,6 +18,10 @@ function App() {
         >
           Learn React
         </a>
+        <div id="bungee">
+          <Card />
+          <Google />
+        </div>
       </header>
     </div>
   );
