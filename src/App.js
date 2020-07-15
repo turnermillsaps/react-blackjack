@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import Card from './Card'; 
+// import Card from './Card'; 
 import Google from './Google';
 import {
   BrowserRouter as Router,
@@ -21,7 +21,7 @@ function App() {
               <div>
                   <nav>
                     <div className="Play-button">
-                      <Link to="/Card">
+                      <Link to="/Board">
                         Play Blackjack
                       </Link>
                     </div>
