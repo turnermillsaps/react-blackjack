@@ -8,15 +8,15 @@ import ReactDOM from "react-dom";
 export default function Google() {
 
     const [name,setName] = useState("");
-
     const [email,setEmail] = useState("");
-
     const [url,setUrl] = useState("");
+    const [googleId,setGoogleId] = useState("");
 
     const responseGoogle = (response) =>{
         setName(response.profileObj.name);
         setEmail(response.profileObj.email);
         setUrl(response.profileObj.imageUrl);
+        setGoogleId(response.profileObj.googleId); 
         console.log(response)
     }
 
@@ -27,7 +27,7 @@ export default function Google() {
             <img src={url} alt={name}/>
                 <div className="Gbutton">
                     <GoogleLogin
-                        clientId="1003724051845-er6a1flvvkhq19uveaub2hoq9q9hedie.apps.googleusercontent.com"
+                        clientId="1003724051845-2423jcovde0hknvcknemde4d30o1rq8n.apps.googleusercontent.com"
                         buttonText="Login"
                         onSuccess={responseGoogle}
                         onFailure={responseGoogle}
