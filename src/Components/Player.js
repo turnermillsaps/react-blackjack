@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Card from '../Card'
 
 export class Player extends Component {
-    render() {
+    render = () => {
         return (
             <div>
                 <div>

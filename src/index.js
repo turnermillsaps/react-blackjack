@@ -10,7 +10,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Board from './Components/Board';
+import Board from './Board';
 
 ReactDOM.render(
   <React.StrictMode>

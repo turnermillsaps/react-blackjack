@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import Player from './Player';
-import Dealer from './Dealer';
+import Player from './Components/Player';
+import Dealer from './Components/Dealer';
 
 export class Board extends Component {
 
@@ -10,12 +10,12 @@ export class Board extends Component {
         this.state = {
           error: null,
           isLoaded: false,
-          cards: []
-        };
+          playercards: [],
+          dealercards: []
       }
-
-    componentDidMount() {
-        axios.get("https://deckofcardsapi.com/api/deck/new/draw/?count=4")
+    }
+    componentDidMount = () => {
+        axios.get("https://deckofcardsapi.com/api/deck/new/draw/?count=2")
           .then(
             (result) => {
               this.setState({
@@ -24,20 +24,20 @@ export class Board extends Component {
                 dealercards: result.data.cards
               });
               console.log(result)
-            },
+            }
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
             // exceptions from actual bugs in components.
-            (error) => {
+            /* (error) => {
               this.setState({
                 isLoaded: true,
                 error
-              });
-            }
+              }); */
+            //}
           )
       }
 
-    render() {
+    render = () => {
         return (
             <div>
                 {console.log('hello')}
