@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import Player from './Components/Player';
 import Dealer from './Components/Dealer';
+import Bet from './Components/Bet';
+import './Board.css'; 
 
 export class Board extends Component {
 
@@ -40,9 +42,18 @@ export class Board extends Component {
     render = () => {
         return (
             <div>
-                {console.log('hello')}
-                <Player cards={this.state.playercards}/>
-                <Dealer cards={this.state.dealercards}/>
+                <div>
+                    <h2 className='card-text'>Player: coding test13</h2>
+                    <h2 className='card-text'>Hit</h2>
+                    <h2 className='card-text'>Stand</h2>
+                    <h2 className='card-text'>Hit</h2>
+                    <h2 className='card-text'>Stand</h2>
+                </div>
+                <Bet />
+                <div className="hands">
+                  <Player cards={this.state.playercards}/>
+                  <Dealer cards={this.state.dealercards}/>
+                </div>
             </div>
         )
     }

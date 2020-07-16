@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
 import Card from '../Card'
+import './Player.css'; 
+
 
 export class Player extends Component {
     render = () => {
         return (
             <div>
                 <div>
-                    <div>
-                        <h2>Player: coding test13</h2>
-                        <h2>Hit</h2>
-                        <h2>Stand</h2>
-                    </div>
-                    <ul>
+                    <ul className='hand-list'>
                         {this.props.cards.map(card => (
-                            <li key={card.code}>
-                            <Card img={card.image}/> 
+                            <li key={card.code} className='hand'>
+                                <div className='card-pics'>
+                                    <Card img={card.image}/> 
+                                </div>
                             </li>
                         ))} 
                     </ul>
+                    
                 </div>
             </div>
         )

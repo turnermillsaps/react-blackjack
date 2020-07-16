@@ -1,15 +1,15 @@
 .board {
-  height: 500px;
+  /* height: 500px; */
   margin-top: auto;
   margin-bottom: auto;
-  width: 1000px;
+  /* width: 1000px; */
   flex-direction: row;
-  text-align: left; 
+  text-align: center; 
   justify-content: space-around;
-  display: flex;
+  /* display: flex;
   background-image: url('./Components/images/blackjack.jpg');
   background-size: 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 
