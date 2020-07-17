@@ -16,16 +16,53 @@ export class Board extends Component {
           dealercards: []
       }
     }
-    componentDidMount = () => {
-        axios.get("https://deckofcardsapi.com/api/deck/new/draw/?count=2")
-          .then(
-            (result) => {
-              this.setState({
-                isLoaded: true,
-                playercards: result.data.cards,
-                dealercards: result.data.cards
-              });
-              console.log(result)
+    // componentDidMount = () => {
+    //     axios.get("https://deckofcardsapi.com/api/deck/new/draw/?count=2")
+    //       .then(
+    //         (result) => {
+    //           this.setState({
+    //             isLoaded: true,
+    //             playercards: result.data.cards,
+    //             dealercards: result.data.cards
+    //           });
+    //           console.log(result)
+    //         }
+
+            componentDidMount = () => {
+              axios.get("https://deckofcardsapi.com/api/deck/new/")
+                .then(
+                  (result) => {
+                    this.setState({
+                      isLoaded: true,
+                      deckID: result.data.deck_id
+                    })
+                    console.log(result);
+                    fetch(
+                      `https://deckofcardsapi.com/api/deck/${this.state.deckID}/draw/?count=2`
+                    )
+                    .then(res => res.json())
+                    .then(
+                      (result) => {
+                        console.log(result); 
+                        this.setState({
+                          playercards: result.cards
+                        })                       
+                        fetch(
+                          `https://deckofcardsapi.com/api/deck/${this.state.deckID}/draw/?count=2`
+                        )
+                        .then(res => res.json())
+                        .then(
+                          (result) => {
+                            this.setState({
+                              dealercards: result.cards
+                          })
+                      }
+                    )}
+
+ 
+                  )
+                }
+              )
             }
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
@@ -35,17 +72,15 @@ export class Board extends Component {
                 isLoaded: true,
                 error
               }); */
-            //}
-          )
-      }
+
+
+      
 
     render = () => {
         return (
             <div>
                 <div>
                     <h2 className='card-text'>Player: coding test13</h2>
-                    <h2 className='card-text'>Hit</h2>
-                    <h2 className='card-text'>Stand</h2>
                     <h2 className='card-text'>Hit</h2>
                     <h2 className='card-text'>Stand</h2>
                 </div>
@@ -57,6 +92,12 @@ export class Board extends Component {
             </div>
         )
     }
+
+
+
 }
+
+
+
 
 export default Board

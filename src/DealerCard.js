@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './Card.css'; 
-import Dealer from './Components/Dealer'
 
-class Card extends Component {  
+class DealerCard extends Component {  
 
   
     render() {
@@ -21,4 +20,4 @@ class Card extends Component {
     }
   // }
 
-  export default Card; 
+  export default DealerCard; 
