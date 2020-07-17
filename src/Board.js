@@ -17,7 +17,7 @@ export class Board extends Component {
           playercards: [],
           dealercards: [],
           playerscore: 0,
-          dealerscore:
+          dealerscore: 0
       }
     }
     // componentDidMount = () => {
