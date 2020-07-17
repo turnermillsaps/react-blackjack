@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-// import Card from './Card'; 
-import Google from './Google';
+import Google from './Components/Google';
 import {
   BrowserRouter as Router,
   Switch,

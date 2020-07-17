@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Welcome from './Components/Welcome';
 import * as serviceWorker from './serviceWorker';
-import Card from './Card'
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,7 +16,7 @@ ReactDOM.render(
     <Router>
     <Switch>
               <Route exact path="/Board" component={Board}/>
-              <Route exact path="/" component={App}/>
+              <Route exact path="/" component={Welcome}/>
           </Switch>
     </Router>
   </React.StrictMode>,
