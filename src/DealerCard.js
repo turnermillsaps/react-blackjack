@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './Card.css'; 
-import Dealer from './Components/Dealer'
 
-class Card extends Component {  
+class DealerCard extends Component {  
 
   
     render() {
       // const { isLoaded, cards } = this.state;
-      // if (error) {
+      // if (error) {ssss
       //   return <div>Error: {error.message}</div>;
       // } else if (!isLoaded) {
       //   return <div>Loading...</div>;
@@ -21,4 +20,4 @@ class Card extends Component {
     }
   // }
 
-  export default Card; 
+  export default DealerCard; 

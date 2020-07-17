@@ -1,0 +1,17 @@
+.card-pics {
+    display: inline-block;
+}
+
+.card-container {
+    flex-direction: row;
+}
+
+.hand {
+    width: fit-content;
+}
+
+.hand-list {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
