@@ -3,6 +3,8 @@ import axios from 'axios';
 import Player from './Components/Player';
 import Dealer from './Components/Dealer';
 
+
+
 export class Board extends Component {
 
     constructor(props) {
@@ -11,7 +13,9 @@ export class Board extends Component {
           error: null,
           isLoaded: false,
           playercards: [],
-          dealercards: []
+          dealercards: [],
+          playerscore: 0,
+          dealerscore:
       }
     }
     componentDidMount = () => {
@@ -37,10 +41,12 @@ export class Board extends Component {
           )
       }
 
+
     render = () => {
         return (
             <div>
                 {console.log('hello')}
+                {console.log(value0)}
                 <Player cards={this.state.playercards}/>
                 <Dealer cards={this.state.dealercards}/>
             </div>
