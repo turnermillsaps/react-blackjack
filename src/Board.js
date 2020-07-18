@@ -7,6 +7,8 @@ import './Board.css';
 
 
 
+
+
 export class Board extends Component {
 
     constructor(props) {
@@ -32,7 +34,28 @@ export class Board extends Component {
     //           console.log(result)
     //         }
 
+
+
+    
+            
             componentDidMount = () => {
+              // Values of cards
+              const cardValues = {
+                KING: 10,
+                JACK: 10,
+                QUEEN: 10,
+                ACE: 11,
+                '10': 10,
+                '9': 9,
+                '8': 8,
+                '7': 7,
+                '6': 6,
+                '5': 5,
+                '4': 4,
+                '3': 3,
+                '2': 2
+              }
+              // Getting a new deck
               axios.get("https://deckofcardsapi.com/api/deck/new/")
                 .then(
                   (result) => {
@@ -41,6 +64,16 @@ export class Board extends Component {
                       deckID: result.data.deck_id
                     })
                     console.log(result);
+                    // Shuffling the deck
+                    fetch(
+                      `https://deckofcardsapi.com/api/deck/${this.state.deckID}/shuffle/`
+                    )
+                    .then(res => res.json())
+                    .then(json => {
+                      console.log(json);
+                      console.log('Shuffled!');
+                    });       
+                    // Drawing two cards for the player
                     fetch(
                       `https://deckofcardsapi.com/api/deck/${this.state.deckID}/draw/?count=2`
                     )
@@ -49,16 +82,18 @@ export class Board extends Component {
                       (result) => {
                         console.log(result); 
                         this.setState({
-                          playercards: result.cards
-                        })                       
+                          playercards: result.cards,
+                        }) 
+                        // Drawing two cards for the dealer                      
                         fetch(
                           `https://deckofcardsapi.com/api/deck/${this.state.deckID}/draw/?count=2`
                         )
                         .then(res => res.json())
                         .then(
                           (result) => {
+                            console.log(result);
                             this.setState({
-                              dealercards: result.cards
+                              dealercards: result.cards,
                           })
                       }
                     )}
@@ -91,7 +126,9 @@ export class Board extends Component {
                 </div>
                 <Bet />
                 <div className="hands">
+                  <p>Player Score {this.state.playerscore + this.state.playercards[0] + this.state.playercards[1]}</p>
                   <Player cards={this.state.playercards}/>
+                  <p>Dealer Score {this.state.dealerscore}</p>
                   <Dealer cards={this.state.dealercards}/>
                 </div>
             </div>
@@ -106,3 +143,4 @@ export class Board extends Component {
 
 
 export default Board
+// Value of cards
