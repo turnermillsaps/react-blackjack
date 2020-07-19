@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* display: flex; */
+  background-image: url('./Components/images/blackjack.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 code {

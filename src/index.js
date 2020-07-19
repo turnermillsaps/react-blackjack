@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Welcome from './Components/Welcome';
 import * as serviceWorker from './serviceWorker';
+import DealerCard from './DealerCard'
+import PlayerCard from './PlayerCard'
 import {
   BrowserRouter as Router,
   Switch,
