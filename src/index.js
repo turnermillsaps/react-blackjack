@@ -1,25 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Welcome from './Components/Welcome';
 import * as serviceWorker from './serviceWorker';
 import DealerCard from './DealerCard'
 import PlayerCard from './PlayerCard'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Board from './Board';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-    <Switch>
-              <Route exact path="/Board" component={Board}/>
-              <Route exact path="/" component={App}/>
-          </Switch>
+      <Switch>
+          <Route exact path="/Board" component={Board}/>
+          <Route exact path="/" component={Welcome}/>
+      </Switch>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
