@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Card from '../DealerCard'
+import PlayerCard from '../PlayerCard'
 import './Player.css'; 
 
 
@@ -12,7 +12,7 @@ export class Player extends Component {
                         {this.props.cards.map(card => (
                             <li key={card.code} className='hand'>
                                 <div className='card-pics'>
-                                    <Card img={card.image}/> 
+                                    <PlayerCard img={card.image}/> 
                                 </div>
                             </li>
                         ))} 

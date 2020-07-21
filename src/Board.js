@@ -119,19 +119,38 @@ export class Board extends Component {
     render = () => {
         return (
             <div>
-                <div>
-                    <h2 className='card-text'>Player: coding test13</h2>
-                    <h2 className='card-text'>Hit</h2>
-                    <h2 className='card-text'>Stand</h2>
+              <div className='title'>
+                <h1>Blackjack</h1>
+              </div>  
+              <div className='record-box'>
+                <div class="gradient-border" id="box">
+                  <p>Player name</p>
+                  <p>Player wins</p>
+                  <p>Player win percentage</p>
+                  <p>Player blackjacks</p>
                 </div>
-                <Bet />
+                <div className='new-game'>
+                  <button>New Game</button>
+                </div>
+              </div>
                 <div className="hands">
-                  <p>Player Score {this.state.playerscore + this.state.playercards[0] + this.state.playercards[1]}</p>
-                  <Player cards={this.state.playercards}/>
-                  <p>Dealer Score {this.state.dealerscore}</p>
-                  <Dealer cards={this.state.dealercards}/>
+                  <h2 className='score-value'>Dealer Score {this.state.dealerscore}</h2>
+                  <Dealer cards={this.state.dealercards}/> 
+                  <div className='player-box'>
+                    <Bet />
+                  </div>
+                  <div className='player-box'>
+                    <h2 className='score-value'>*Username* Score {this.state.playerscore}</h2>
+                  </div > 
+                  <div className='player-box'>
+                    <button className='card-text'>Hit</button>
+                    <button className='card-text'>Stand</button>   
+                  </div>
+                  <div>
+                    <Player cards={this.state.playercards}/>
+                  </div>
                 </div>
-            </div>
+              </div>
         )
     }
 
