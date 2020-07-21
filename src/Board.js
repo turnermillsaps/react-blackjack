@@ -169,7 +169,7 @@ export class Board extends Component {
                     <h2 className='score-value'>*Username* Score {this.state.playerscore}</h2>
                   </div > 
                   <div className='player-box'>
-                    <button className='card-text'>Hit</button>
+                    <button onClick={this.hit()}>HIT</button>
                     <button className='card-text'>Stand</button>   
                   </div>
                   <div>
