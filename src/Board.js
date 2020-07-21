@@ -56,11 +56,36 @@ export class Board extends Component {
             playercards: newCards,
             playerscore: (this.state.playerscore + this.getCardValue(result.cards[0].value))
             })
+            this.blackjack();
           }) 
             
           }
         
       }
+
+      // Check who has blackjack
+      blackjack = () => {
+        if (this.state.playerscore === 21) {
+          alert("You've Won!!");
+        } else if (this.state.playerscore > 21) {
+          alert("Bust!"); 
+        } 
+        if (this.state.dealerscore === 21) {
+          alert("Dealer Wins!");
+        } else if (this.state.dealerscore === 21 && this.state.playerscore === 21) {
+          alert("Draw!");
+        }
+      }
+
+      // Dealing with Aces
+      /*playerAce = () => {
+        if (this.getCardValue(result.cards[0].value) === 11 && this.getCardValue(result.cards[1].value) === 11) {
+          this.state.playerscore - 10;
+        } 
+      }*/
+
+
+
 
     
             
@@ -109,6 +134,7 @@ export class Board extends Component {
                               dealercards: result.cards,
                               dealerscore: this.getCardValue(result.cards[0].value) + this.getCardValue(result.cards[1].value)
                           })
+                          this.blackjack();
                       }
                     )}
                   )
