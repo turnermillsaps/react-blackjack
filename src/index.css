@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* display: flex; */
-  background-image: url('./Components/images/blackjack.jpg');
+  background-image: url('./Components/images/poker-background.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
 }

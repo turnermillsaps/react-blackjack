@@ -1,3 +1,82 @@
 .hands {
     align-items: center;
 }
+
+.score-value {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.player-box {
+    display: flex;
+    justify-content: center;
+    height: 25px;
+    margin: 35px;
+}
+
+
+.card-text {
+    color: black;
+}
+
+.record-box {
+    position: absolute;
+    top: 132px;
+    margin-left: 50px;
+}
+
+#box {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: fit-content;
+    color: white;
+    font-family: 'Raleway';
+    font-size: 2.5rem;
+    padding: 5px;
+  }
+  .gradient-border {
+    --borderWidth: 5px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  
+  
+  @keyframes animatedgradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
+  .new-game { 
+    position: absolute;
+    top: 400px;
+    margin-left: 150px;
+  }
+
+  .title {
+      text-align: center;
+      color: white;
+  }
