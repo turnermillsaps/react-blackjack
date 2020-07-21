@@ -156,7 +156,7 @@ export class Board extends Component {
                   <p>Player blackjacks</p>
                </div>
                 <div className='new-game'>
-                  <button>New Game</button>
+                  <button className='big-button'>New Game</button>
                 </div>
               </div>
                 <div className="hands">
