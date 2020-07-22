@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Card from '../DealerCard'
+import DealerCard from '../DealerCard'
 import './Dealer.css'; 
 
 export class Dealer extends Component {
@@ -14,7 +14,7 @@ export class Dealer extends Component {
                             return (
                                 <li key={card.code} className='hand'>
                                     <div className='card-pics'>
-                                        <img src="/images/blankCard.jpg" alt='blank card' class="blankCard" /> 
+                                        <img src="/images/blankCard.jpg" alt='blankcard' class="blankCard" /> 
                                     </div>
                                 </li>
                             )
@@ -22,7 +22,7 @@ export class Dealer extends Component {
                         return (
                         <li key={card.code} className='hand'>
                             <div className='card-pics'>
-                                <Card img={card.image}/> 
+                                <DealerCard img={card.image}/> 
                             </div>
                         </li>
                         )

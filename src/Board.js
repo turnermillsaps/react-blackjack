@@ -22,6 +22,7 @@ export class Board extends Component {
           dealerscore: 0
       }
     }
+
     // Sum of cards
     getCardValue = (card) => {
       // Values of cards
@@ -50,11 +51,15 @@ export class Board extends Component {
           .then(res => res.json())
           .then(
           (result) => {
-          console.log(result); 
-          // const newCards = this.state.playercards.push(result.cards[0])
+          console.log(result);
+          // Automatically handle the case for Aces
+          let cardValue = this.getCardValue(result.cards[0].value);
+          if (result.cards[0].value === 'ACE' && (this.state.playerscore + this.getCardValue(result.cards[0].value)) > 21) {
+            cardValue = 1
+          }
           const newState = this.state;
           newState.playercards.push(result.cards[0])
-          newState.playerscore = (this.state.playerscore + this.getCardValue(result.cards[0].value))
+          newState.playerscore = (this.state.playerscore + cardValue)
           this.setState({
             newState
           })
@@ -90,6 +95,11 @@ export class Board extends Component {
       }
     }
 
+    
+    refreshPage = () => {
+      window.location.reload();
+  } 
+
       // Dealing with Aces
       /*playerAce = () => {
         if (this.getCardValue(result.cards[0].value) === 11 && this.getCardValue(result.cards[1].value) === 11) {
@@ -99,9 +109,7 @@ export class Board extends Component {
 
 
 
-
     
-            
     componentDidMount = () => {
       
       // Getting a new deck
@@ -170,7 +178,7 @@ export class Board extends Component {
                   <p>Player blackjacks</p>
                </div>
                 <div className='new-game'>
-                  <button className='big-button'>New Game</button>
+                  <button className='big-button' onClick={this.refreshPage}>New Game</button>
                 </div>
               </div>
                 <div className="hands">
@@ -202,4 +210,3 @@ export class Board extends Component {
 
 
 export default Board
-
