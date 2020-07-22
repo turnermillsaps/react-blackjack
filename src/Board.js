@@ -22,6 +22,7 @@ export class Board extends Component {
           dealerscore: 0
       }
     }
+
     // Sum of cards
     getCardValue = (card) => {
       // Values of cards
@@ -78,6 +79,10 @@ export class Board extends Component {
         alert("Draw!");
       }
     }
+
+    refreshPage = () => {
+      window.location.reload();
+  } 
 
       // Dealing with Aces
       /*playerAce = () => {
@@ -159,7 +164,7 @@ export class Board extends Component {
                   <p>Player blackjacks</p>
                </div>
                 <div className='new-game'>
-                  <button className='big-button'>New Game</button>
+                  <button className='big-button' onClick={this.refreshPage}>New Game</button>
                 </div>
               </div>
                 <div className="hands">
@@ -191,4 +196,3 @@ export class Board extends Component {
 
 
 export default Board
-
