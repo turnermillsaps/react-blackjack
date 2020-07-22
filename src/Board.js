@@ -169,6 +169,12 @@ export class Board extends Component {
                   <button className='big-button' onClick={this.refreshPage}>New Game</button>
                 </div>
               </div>
+              <div className='record-box2'>
+              <div class="gradient-border2" id="box2">
+                  <p>Pot</p>
+                  <p>$50</p>
+              </div>
+              </div>
                 <div className="hands">
                   <h2 className='score-value'>Dealer Score {this.state.dealerscore}</h2>
                   <Dealer cards={this.state.dealercards}/> 
