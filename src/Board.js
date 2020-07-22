@@ -79,6 +79,17 @@ export class Board extends Component {
       }
     }
 
+    // Player vs Dealer
+    stand = () => {
+      if (this.state.playerscore > this.state.dealerscore && this.state.playerscore <= 21 ) {
+        alert("You've Won!!");
+      } else if (this.state.dealerscore > 21) {
+        alert("You've Won!!");
+      } else if (this.state.playerscore === this.state.dealerscore) {
+        alert("Draw"); 
+      }
+    }
+
       // Dealing with Aces
       /*playerAce = () => {
         if (this.getCardValue(result.cards[0].value) === 11 && this.getCardValue(result.cards[1].value) === 11) {
@@ -173,7 +184,7 @@ export class Board extends Component {
                   </div > 
                   <div className='player-box'>
                     <button className='card-text' onClick={this.hit}>Hit</button>
-                    <button className='card-text'>Stand</button>   
+                    <button className='card-text' onClick={this.stand}>Stand</button>   
                   </div>
                   <div>
                     <Player cards={this.state.playercards}/>
