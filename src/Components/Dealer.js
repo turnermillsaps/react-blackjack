@@ -14,7 +14,7 @@ export class Dealer extends Component {
                             return (
                                 <li key={card.code} className='hand'>
                                     <div className='card-pics'>
-                                        <img src="/blankCard.jpg" alt='blankcard' class="blankCard" /> 
+                                        <img src="/images/blankCard.jpg" alt='blankcard' class="blankCard" /> 
                                     </div>
                                 </li>
                             )
