@@ -182,7 +182,7 @@ export class Board extends Component {
                     <Bet />
                   </div>
                   <div className='player-box'>
-                    <h2 className='score-value'>*Username* Score {this.state.playerscore}</h2>
+                    <h2 className='score-value'>Score {this.state.playerscore}</h2>
                   </div > 
                   <div className='player-box'>
                     <button className='card-text' onClick={this.hit}>Hit</button>
