@@ -84,34 +84,43 @@ export class Board extends Component {
       }
     }
 
-    // Player vs Dealer
+    // Recursively draw cards for the dealer until he reaches 17 or over
+    dealerDraw = (dealerScore) => {
+      if (dealerScore < 17) {
+        axios.get(`https://deckofcardsapi.com/api/deck/${this.state.deckID}/draw/?count=1`)
+          .then(result => {
+            console.log(result);
+            dealerScore = dealerScore + this.getCardValue(result.data.cards[0].value)
+            console.log(`Dealer Score: ${dealerScore}`)
+            return this.dealerDraw(dealerScore)
+          })
+      } else {
+        return this.displayResults(dealerScore)
+      }
+    }
+
+    // Set up Promise to call dealerDraw() when player stands
     stand = () => {
-      if (this.state.playerscore > this.state.dealerscore && this.state.playerscore <= 21 ) {
+      return Promise.resolve(this.dealerDraw(this.state.dealerscore))
+    }
+
+    // Display the results after play stands
+    displayResults = (updatedDealerScore) => {
+      if (this.state.playerscore > updatedDealerScore && this.state.playerscore <= 21 ) {
         alert("You've Won!!");
-      } else if (this.state.dealerscore > 21) {
+      } else if (updatedDealerScore > 21) {
         alert("You've Won!!");
-      } else if (this.state.playerscore === this.state.dealerscore) {
+      } else if (this.state.playerscore === updatedDealerScore) {
         alert("Draw"); 
       }
     }
 
-    
     refreshPage = () => {
       window.location.reload();
-  } 
-
-      // Dealing with Aces
-      /*playerAce = () => {
-        if (this.getCardValue(result.cards[0].value) === 11 && this.getCardValue(result.cards[1].value) === 11) {
-          this.state.playerscore - 10;
-        } 
-      }*/
-
-
+    } 
 
     
-    componentDidMount = () => {
-      
+    componentDidMount = () => {     
       // Getting a new deck
       axios.get("https://deckofcardsapi.com/api/deck/new/")
         .then(
