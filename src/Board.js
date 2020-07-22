@@ -84,6 +84,18 @@ export class Board extends Component {
       }
     }
 
+    // Player vs Dealer
+    stand = () => {
+      if (this.state.playerscore > this.state.dealerscore && this.state.playerscore <= 21 ) {
+        alert("You've Won!!");
+      } else if (this.state.dealerscore > 21) {
+        alert("You've Won!!");
+      } else if (this.state.playerscore === this.state.dealerscore) {
+        alert("Draw"); 
+      }
+    }
+
+    
     refreshPage = () => {
       window.location.reload();
   } 
@@ -186,7 +198,7 @@ export class Board extends Component {
                   </div > 
                   <div className='player-box'>
                     <button className='card-text' onClick={this.hit}>Hit</button>
-                    <button className='card-text'>Stand</button>   
+                    <button className='card-text' onClick={this.stand}>Stand</button>   
                   </div>
                   <div>
                     <Player cards={this.state.playercards}/>
