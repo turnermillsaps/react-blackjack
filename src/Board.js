@@ -19,7 +19,9 @@ export class Board extends Component {
           playercards: [],
           dealercards: [],
           playerscore: 0,
-          dealerscore: 0
+          dealerscore: 0,
+          playerFunds: this.props.location.state.userGames.sum,
+          pot: 0
       }
     }
 
@@ -104,7 +106,7 @@ export class Board extends Component {
       return Promise.resolve(this.dealerDraw(this.state.dealerscore))
     }
 
-    // Display the results after play stands
+    // Display the results after play stands and update player funds accordingly
     displayResults = (updatedDealerScore) => {
       if (this.state.playerscore > updatedDealerScore && this.state.playerscore <= 21 ) {
         alert("You've Won!!");
@@ -115,11 +117,21 @@ export class Board extends Component {
       }
     }
 
+    // Start a new game
     refreshPage = () => {
       window.location.reload();
     } 
 
-    
+    // Place a bet and add dealer's contribution as double original bet placed
+    placeBet = (value) => {
+      this.setState({
+        ...this.state,
+        playerFunds: this.state.playerFunds - parseInt(value),
+        pot: this.state.pot + (parseInt(value) * 2)
+      })
+    }
+
+
     componentDidMount = () => {     
       // Getting a new deck
       axios.get("https://deckofcardsapi.com/api/deck/new/")
@@ -185,6 +197,7 @@ export class Board extends Component {
                   <p>Player wins</p>
                   <p>Player win percentage</p>
                   <p>Player blackjacks</p>
+                  <h3>Player funds: {this.state.playerFunds}</h3>
                </div>
                 <div className='new-game'>
                   <button className='big-button' onClick={this.refreshPage}>New Game</button>
@@ -193,14 +206,14 @@ export class Board extends Component {
               <div className='record-box2'>
               <div class="gradient-border2" id="box2">
                   <p>Pot</p>
-                  <p>$50</p>
+                  <p>${this.state.pot}</p>
               </div>
               </div>
                 <div className="hands">
                   <h2 className='score-value'>Dealer Score {this.state.dealerscore}</h2>
                   <Dealer cards={this.state.dealercards}/> 
                   <div className='player-box'>
-                    <Bet />
+                    <Bet placeBet={this.placeBet}/>
                   </div>
                   <div className='player-box'>
                     <h2 className='score-value'>Score {this.state.playerscore}</h2>
