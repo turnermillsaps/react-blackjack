@@ -336,9 +336,6 @@ export class Board extends Component {
               <div className='new-game'>
                 <button className='big-button' onClick={this.refreshPage}>New Game</button>
               </div>
-              <div className='end-game'>
-                <button className='big-button' onClick={this.endGame}>End Game</button>
-              </div>
             </div>
             <div className='record-box2'>
               <div className="gradient-border2" id="box2">
