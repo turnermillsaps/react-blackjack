@@ -21,7 +21,7 @@ export class Bet extends Component {
     render() {
         return (
             <div>
-              <form onSubmit={this.placeBet}>
+              <form onSubmit={this.placeBet} className='formlist'>
                 <label for='bet' id='chbet'>Choose your bet!  </label>
                 <select id='bet' name='bet' value={this.state.value} onChange={this.handleChange}>
                   <option value='5'>5</option>

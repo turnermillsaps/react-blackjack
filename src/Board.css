@@ -106,6 +106,7 @@ h1 {
   .new-game { 
     top: 400px;
     margin-left: 100px;
+    margin-top: 20px;
   }
 
   .end-game {
@@ -301,4 +302,9 @@ h1 {
    
        box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
  
+ }
+
+ .formlist {
+   display: flex;
+   justify-content: center;
  }
