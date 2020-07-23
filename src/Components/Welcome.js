@@ -76,13 +76,13 @@ class Welcome extends Component {
             </div>
         )
         const welcomeData = (
-            <div>
-                <div>
+            <div className='stat-box'>
+                <div className='google-stat'>
                     <h2>Welcome: {this.state.userData.name}</h2>
                     <h2>Email: {this.state.userData.email}</h2>
-                    <img src={this.state.userData.imageUrl} alt=""/>
+                    <img className='google-img' src={this.state.userData.imageUrl} alt=""/>
                 </div>
-                <div>
+                <div className='google-stat'>
                     <h2>Games Played: {this.state.userGames.count}</h2>
                     <h2>Total Earnings: {this.state.userGames.sum}</h2>
                 </div>
@@ -100,10 +100,17 @@ class Welcome extends Component {
         return (
             <div className="App">
               <header className="App-header">
+                <div>
+                    <p className="logo-1">Blackjack</p>
+                </div>
+
+                <div className="button_cont" align="center">
+                    <a className="example_e" href="add-website-here" target="_blank" rel="nofollow noopener">{!this.state.userSignedIn ? <Google getUserData={this.getUserData}/> : playButton}</a>
+                    <h3 className='welcome-inst'>Click here to login</h3>             
+                </div>
+
                 <div className="Body">
-                  <div id="bungee">
-                      {!this.state.userSignedIn ? <Google getUserData={this.getUserData}/> : playButton}
-                  </div>
+
                   <div class="box-1">                           
                       <div>
                           <nav>

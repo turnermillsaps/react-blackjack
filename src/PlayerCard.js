@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './PlayerCard.css';
 
 export class PlayerCard extends Component {
     render() {

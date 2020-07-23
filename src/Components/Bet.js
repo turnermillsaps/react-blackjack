@@ -6,7 +6,7 @@ export class Bet extends Component {
     render() {
         return (
             <div>
-              <form action='/*BET SUBMISSION ACTION*'>
+              <form action='/*BET SUBMISSION ACTION*' id='content'>
                 <label for='bet' id='chbet'>Choose your bet!  </label>
                 <select id='bet' name='bet'>
                   <option value='5'>5</option>
@@ -16,7 +16,7 @@ export class Bet extends Component {
                   <option value='40'>40</option>
                   <option value='50'>50</option>
                 </select>                  
-                <input type="submit" />
+                <button type="submit" className='button'><span>Submit</span></button>
               </form>
             </div>
         )
