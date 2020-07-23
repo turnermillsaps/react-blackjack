@@ -14,7 +14,7 @@
   }
   
   .App-header {
-    background-image: url('./images/blackjack.jpg');
+    background-image: url('./images/poker-background.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: #282c34;
@@ -28,10 +28,8 @@
   }
   
   .Body{
-    height: 500px;
     margin-top: auto;
-    margin-bottom: auto;
-    width: 400px;
+    margin-bottom: 100px;
     background-color: rgba(0,0,0,0.5) !important;
     flex-direction: column;
     text-align: center;
@@ -54,3 +52,90 @@
     }
   }
   
+
+  :root {
+    --shadow-color: #FF9E9E;
+    --shadow-color-light: white;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  p {
+    margin: 75px;
+    font-size: 65px;
+    text-transform: uppercase;
+    font-family: "Archivo Black", "Archivo", sans-serif;
+    font-weight: normal;
+    display: block;
+    height: auto;
+    text-align: center;
+  }
+  
+  .logo-1 {
+    color: white;
+    animation: neon 3s infinite;
+  }
+  
+  @keyframes neon {
+    0% {
+      text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+      0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+      0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+    }
+    50% {
+      text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+      0 0 5px var(--shadow-color-light), 0 0 15px var(--shadow-color-light), 0 0 25px var(--shadow-color-light),
+      0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 60px var(--shadow-color), 0 0 80px var(--shadow-color), 0 0 110px var(--shadow-color), 0 0 210px var(--shadow-color);
+    }
+    100% {
+      text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+      0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+      0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+    }
+  }
+
+  .example_e {
+    border: none;
+    background: #ffffff;
+    color: black !important;
+    font-weight: 100;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    }
+
+    .example_e:hover {
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      letter-spacing: 3px;
+      background: none;
+      -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      transition: all 0.3s ease 0s;
+      }
+
+      .google-stat {
+        padding: 25px;
+      }
+
+      .google-img {
+        margin: 10px;
+      }
+
+      .welcome-inst {
+        margin-top: 20px;
+        color: white;
+        animation: neon 3s infinite;
+      }
+
+      .button_cont {
+        margin-top: 100px;
+      }
+
+      

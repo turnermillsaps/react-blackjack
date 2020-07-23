@@ -300,14 +300,13 @@ export class Board extends Component {
     render = () => {
       const hands = (
         <div className="hands">
-          <h2 className='score-value'>Dealer Score {this.state.dealerscore}</h2>
           <Dealer cards={this.state.dealercards}/> 
           <div className='player-box'>
             <h2 className='score-value'>Score {this.state.playerscore}</h2>
           </div > 
           <div className='player-box'>
-            <button className='card-text' onClick={this.hit}>Hit</button>
-            <button className='card-text' onClick={this.stand}>Stand</button>   
+            <button className='big-button2' onClick={this.hit}>Hit</button>
+            <button className='big-button2' onClick={this.stand}>Stand</button>  
           </div>
           <div>
             <Player cards={this.state.playercards}/>
@@ -324,13 +323,13 @@ export class Board extends Component {
       return (
           <div>
             <div className='title'>
-              <h1>Blackjack</h1>
+              <h1 className='logo-1'>Blackjack</h1>
             </div>  
             <div className='record-box'>
-              <div class="gradient-border" id="box">
-                <p>Player: {this.state.playerName}</p>
-                <p>Games Played: {this.state.gamesPlayed}</p>
-                <h3>Player funds: {this.state.playerFunds}</h3>
+              <div className="gradient-border" id="box">
+                <h3 className='stats'>Player: {this.state.playerName}</h3>
+                <h3 className='stats'>Games Played: {this.state.gamesPlayed}</h3>
+                <h3 className='stats'>Player funds: {this.state.playerFunds}</h3>
               </div>
               <div className='new-game'>
                 <button className='big-button' onClick={this.refreshPage}>New Game</button>
@@ -340,7 +339,7 @@ export class Board extends Component {
               </div>
             </div>
             <div className='record-box2'>
-              <div class="gradient-border2" id="box2">
+              <div className="gradient-border2" id="box2">
                   <p>Pot</p>
                   <p>${this.state.pot}</p>
               </div>

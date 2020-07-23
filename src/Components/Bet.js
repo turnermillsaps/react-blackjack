@@ -31,7 +31,7 @@ export class Bet extends Component {
                   <option value='40'>40</option>
                   <option value='50'>50</option>
                 </select>                  
-                <input type="submit" />
+                <button type="submit" className='button'><span>Submit</span></button>
               </form>
             </div>
         )
