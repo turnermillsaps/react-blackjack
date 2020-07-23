@@ -104,7 +104,11 @@ h1 {
   }
 
   .new-game { 
-    position: absolute;
+    top: 400px;
+    margin-left: 100px;
+  }
+
+  .end-game {
     top: 400px;
     margin-left: 100px;
   }
