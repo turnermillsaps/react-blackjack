@@ -21,6 +21,8 @@ export class Board extends Component {
           playerscore: 0,
           dealerscore: 0,
           playerFunds: this.props.location.state.userGames.sum,
+          playerName: this.props.location.state.userData.name,
+          gamesPlayed: this.props.location.state.userGames.count,
           pot: 0,
           betPlaced: false
       }
@@ -103,7 +105,6 @@ export class Board extends Component {
     // Display the results after play stands and update player funds accordingly
     standBlackjack = (updatedDealerScore, playerscore) => {
       if (playerscore > updatedDealerScore && playerscore <= 21 ) {
-        console.log("You've Won!!");
         this.handleResult('Player');
       } else if (updatedDealerScore > 21) {
         console.log("You've Won!!");
@@ -139,6 +140,11 @@ export class Board extends Component {
       window.location.reload();
     } 
 
+    // Post game data
+    endGame = () => {
+
+    }
+
     // Place a bet and add dealer's contribution as double original bet placed
     placeBet = (value) => {
       this.setState({
@@ -146,6 +152,8 @@ export class Board extends Component {
         playerFunds: this.state.playerFunds - parseInt(value),
         pot: this.state.pot + (parseInt(value) * 2),
         betPlaced: true
+      }, () => {
+        this.hitBlackjack()
       })
     }
 
@@ -161,8 +169,10 @@ export class Board extends Component {
           playerFunds: newFunds,
           betPlaced: false,
           pot: 0
+        }, () => {
+          this.dealCards() 
+          alert("You've Won!!")
         })
-        this.dealCards()
       } else if (winner === 'Dealer') {
         this.setState({
           ...this.state,
@@ -172,8 +182,10 @@ export class Board extends Component {
           dealerscore: 0,
           betPlaced: false,
           pot: 0
-        })
-        this.dealCards()
+        }, () => { 
+          this.dealCards()
+          alert("Dealer Wins, womp womp")
+        })       
       } else if (winner === 'Draw') {
         this.setState({
           ...this.state,
@@ -182,8 +194,10 @@ export class Board extends Component {
           playerscore: 0,
           dealerscore: 0,
           betPlaced: false
+        }, () => { 
+          this.dealCards()
+          alert("Draw!!") 
         })
-        this.dealCards()
       }
     }
 
@@ -314,14 +328,15 @@ export class Board extends Component {
             </div>  
             <div className='record-box'>
               <div class="gradient-border" id="box">
-                <p>Player name</p>
-                <p>Player wins</p>
-                <p>Player win percentage</p>
-                <p>Player blackjacks</p>
+                <p>Player: {this.state.playerName}</p>
+                <p>Games Played: {this.state.gamesPlayed}</p>
                 <h3>Player funds: {this.state.playerFunds}</h3>
               </div>
               <div className='new-game'>
                 <button className='big-button' onClick={this.refreshPage}>New Game</button>
+              </div>
+              <div className='end-game'>
+                <button className='big-button' onClick={this.endGame}>End Game</button>
               </div>
             </div>
             <div className='record-box2'>
