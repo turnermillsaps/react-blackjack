@@ -93,13 +93,13 @@ export class Board extends Component {
             return this.dealerDraw(dealerScore)
           })
       } else {
-        this.standBlackjack(dealerScore, this.state.playerscore)
+        return this.standBlackjack(dealerScore, this.state.playerscore)
       }
     }
 
     // Set up Promise to call dealerDraw() when player stands
     stand = () => {
-      return Promise.resolve(this.dealerDraw(this.state.dealerscore))
+      Promise.resolve(this.dealerDraw(this.state.dealerscore))
     }
 
     // Display the results after play stands and update player funds accordingly
@@ -114,6 +114,8 @@ export class Board extends Component {
         this.handleResult('Draw'); 
       } else if (updatedDealerScore === 21) {
         console.log("Dealer wins!");
+        this.handleResult('Dealer');
+      } else if (updatedDealerScore < 21 && updatedDealerScore > playerscore) {
         this.handleResult('Dealer');
       }
     }
