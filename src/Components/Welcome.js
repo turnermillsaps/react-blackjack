@@ -34,8 +34,9 @@ class Welcome extends Component {
     // Call express API to update the database with user information if it exists
     pushUserData = (user) => {
         // Quick solution for using test vs prod database, set to false before pushing to master
+        let testdb = false
         let apiUrl = 'https://react-blackjack-backend.herokuapp.com/api/'
-        if (!process.env.VERCEL_URL) {
+        if (testdb) {
             apiUrl = 'http://localhost:3001/api/'
         }
         axios.post(`${apiUrl}findOrCreateUser`, {           
